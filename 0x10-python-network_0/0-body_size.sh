@@ -1,4 +1,3 @@
 #!/bin/bash
 
-curl $1"
-   -H "Content-Length: 10" 
+response=$(curl -i "Accept: $0") 
