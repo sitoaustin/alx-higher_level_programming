@@ -7,7 +7,7 @@ if __name__ == "__main__":
     import sys
     import urllib.request
     url = sys.argv[1]
-    req = urllib.request.Request('{}'.format(url))
+    req = urllib.request.Request(url)
     with urllib.request.urlopen(req) as response:
         content = response.headers.items()
         resultDictionary = dict((x, y) for x, y in content)
