@@ -10,4 +10,5 @@ if __name__ == "__main__":
     req = urllib.request.Request('{}'.format(user_input))
     with urllib.request.urlopen(req) as response:
         content = response.headers.items()
-        print(content["X-Request-Id"])
+        resultDictionary = dict((x, y) for x, y in content)
+        print(resultDictionary["X-Request-Id"])
