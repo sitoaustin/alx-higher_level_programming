@@ -9,5 +9,5 @@ if __name__ == "__main__":
     user_input = input("Enter username:")
     req = urllib.request.Request('{}'.format(user_input))
     with urllib.request.urlopen(req) as response:
-        content = response.headers
-        print(content)
+        content = response.headers.items()
+        print(content["X-Request-Id"])
