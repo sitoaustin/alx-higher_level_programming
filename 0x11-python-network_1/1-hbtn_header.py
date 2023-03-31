@@ -5,9 +5,11 @@ X-Request-Id variable found in the header of the response.
 """
 
 if __name__ == "__main__":
+    import sys
     import urllib.request
+    url = sys.argv[1]
     user_input = input("Enter username:")
-    req = urllib.request.Request('{}'.format(user_input))
+    req = urllib.request.Request('{}'.format(url))
     with urllib.request.urlopen(req) as response:
         content = response.headers.items()
         resultDictionary = dict((x, y) for x, y in content)
