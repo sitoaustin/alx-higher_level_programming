@@ -8,7 +8,6 @@ if __name__ == "__main__":
     import sys
     import urllib.request
     url = sys.argv[1]
-    user_input = input("Enter username:")
     req = urllib.request.Request('{}'.format(url))
     with urllib.request.urlopen(req) as response:
         content = response.headers.items()
