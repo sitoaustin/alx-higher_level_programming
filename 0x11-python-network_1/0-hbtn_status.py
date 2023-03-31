@@ -4,10 +4,8 @@ https://alx-intranet.hbtn.io/status
 and uses urllib library
 """
 
-import urllib.request
-
 if __name__ == "__main__":
-    the_page = ""
+    import urllib.request
     req = urllib.request.Request('https://alx-intranet.hbtn.io/status')
     with urllib.request.urlopen(req) as response:
         content = response.read()
