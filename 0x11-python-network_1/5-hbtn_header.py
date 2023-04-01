@@ -9,4 +9,4 @@ import requests
 if __name__ == "__main__":
     url = sys.argv[1]
     req = requests.head(url)
-    print(req)
+    print(req.text)
