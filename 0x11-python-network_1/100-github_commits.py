@@ -12,6 +12,6 @@ if __name__ == "__main__":
     datas = response.json()[:10]
     for data in datas:
         for key in data.keys():
-            print(data["key"])
+            print(data[key])
 
     # print(response.json()[:10])
