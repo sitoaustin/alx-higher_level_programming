@@ -13,5 +13,5 @@ if __name__ == "__main__":
     # url = 'https://httpbin.org/post' # Set destination URL here
     # data = {'name': 'Bruce Wayne'}     # Set POST fields here
     req = Request(url, urlencode(data).encode())
-    response = urlopen(req).read().decode('utf-8')
+    response = urlopen(req).read().decode()
     print(response)
