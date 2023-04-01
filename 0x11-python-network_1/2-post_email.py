@@ -10,8 +10,9 @@ if __name__ == "__main__":
     from urllib.request import Request, urlopen
     url = sys.argv[1]
     data = sys.argv[2]
-    # url = 'https://httpbin.org/post' # Set destination URL here
-    # data = {'name': 'Bruce Wayne'}     # Set POST fields here
     req = Request(url, urlencode(data).encode())
-    response = urlopen(req).read().decode()
-    print(response)
+    with Request(req) as response:
+        content = response.read().decode('utf-8')
+        print(content)
+    # response = urlopen(req).read().decode()
+    # print(response)
