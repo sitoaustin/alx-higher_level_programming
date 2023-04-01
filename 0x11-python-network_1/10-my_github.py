@@ -4,9 +4,11 @@ github user
 """
 import sys
 import requests
+from requests.auth import HTTPBasicAuth
+
 
 if __name__ == "__main__":
-    user_name = sys.argv[1]
-    pass_w = sys.argv[2]
-    login = requests.get('https://api.github.com/search/repositories?q=github+api', auth=(user_name,pass_w))
-    print(dict(login.text).get("items"))
+    basic = HTTPBasicAuth(sys.argv[1], sys.argv[2])
+    data = requests.get('https://api.github.com/user/', auth=basic)
+    # print(dict(data.text).get("items"))
+    print(data)
