@@ -14,4 +14,4 @@ if __name__ == "__main__":
     login = requests.get('https://api.github.com/search/repositories?q=github+api', auth=(user_name,pass_w))
     # headers = {'Authorization': f'token {pass_w}'}
     # res = requests.get("https://api.github.com/users/{}/".format(user_name), headers=headers)
-    print(login)
+    print(login.text)
