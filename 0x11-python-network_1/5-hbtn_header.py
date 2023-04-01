@@ -8,5 +8,5 @@ import requests
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    req = requests.head(url)
-    print(req.text)
+    req = requests.get(url)
+    print(req.headers)
