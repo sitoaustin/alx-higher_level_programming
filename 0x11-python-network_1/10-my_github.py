@@ -9,6 +9,5 @@ from requests.auth import HTTPBasicAuth
 
 if __name__ == "__main__":
     basic = HTTPBasicAuth(sys.argv[1], sys.argv[2])
-    data = requests.get('https://api.github.com/user/', auth=basic)
-    # print(dict(data.text).get("items"))
+    data = requests.get('https://api.github.com/user', auth=basic)
     print(data)
