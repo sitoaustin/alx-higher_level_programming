@@ -8,6 +8,7 @@ import requests
 if __name__ == "__main__":
     user_name = sys.argv[1]
     pass_w = sys.argv[2]
-    params = {"username": user_name, "auth": pass_w}
-    res = requests.get("users/{}".format(user_name), data=params)
+    # payload = {"username": user_name, "auth": pass_w}
+    headers = {'Authorization': f'token {pass_w}'}
+    res = requests.get("https://api.github.com/users/{}/".format(user_name), headers=headers)
     print(res)
