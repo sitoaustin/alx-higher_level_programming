@@ -12,3 +12,4 @@ if __name__ == "__main__":
         content = response.headers.items()
         resultDictionary = dict((x, y) for x, y in content)
         print(resultDictionary["X-Request-Id"])
+        print(response.info())
