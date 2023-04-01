@@ -11,5 +11,5 @@ if __name__ == "__main__":
     with urllib.request.urlopen(req) as response:
         content = response.headers.items()
         resultDictionary = dict((x, y) for x, y in content)
-        print(resultDictionary["X-Request-Id"])
+        # print(resultDictionary["X-Request-Id"])
         print(response.info()['X-Request-Id'])
