@@ -9,4 +9,9 @@ from requests.auth import HTTPBasicAuth
 
 if __name__ == "__main__":
     response = requests.get('https://api.github.com/repos/{}/{}/commits'.format(sys.argv[2], sys.argv[1]))
-    print(response.json()[0])
+    datas = response.json()[:10]
+    for data in datas:
+        for key in data.keys():
+            print(data["key"])
+
+    # print(response.json()[:10])
