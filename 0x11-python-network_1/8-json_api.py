@@ -7,7 +7,10 @@ the letter as a parameter.
 import requests
 import sys
 if __name__ == "__main__":
-    input_payload = sys.argv[1] or ""
+    if not sys.argv[1]:
+        input_payload = ""
+    else:
+        input_payload = sys.argv[1]
     payload = {'q': input_payload}
     response = requests.post("http://0.0.0.0:5000/search_user", data=payload)
     print(response.text)
